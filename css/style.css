@@ -1,12 +1,184 @@
 * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-size: 1em;
-  background-color: #fcf4ec;
   font-family: "Space Mono", monospace;
 }
+body {
+  background-color: #f5ede4;
+}
+a {
+  text-decoration: none;
+  background-color: transparent;
+  color: #f5ede4;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
 
-.headContainer {
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  /* background: lightgreen; */
+}
+.headerTitle::before {
+  content: "Top 10";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.3rem;
+}
+.headerTitle {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #f5ede4;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  padding: 1rem;
+}
+.headerTitle::after {
+  content: "in Norway";
+  position: absolute;
+  bottom: 0;
+  right: -15%;
+  transform: rotate(-10deg);
+  background: black;
+  font-size: 1.3rem;
+}
+.headerSubTitle {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  /* align-items: center; */
+  margin-top: 2rem;
+}
+/* .headerDate {
+} */
+.headerTooltip {
+  /* background: lightgoldenrodyellow; */
+  text-align: center;
+  position: relative;
+}
+.tooltipInformation::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: 5%;
+  border-bottom: 1rem solid black;
+  border-right: 0.5rem solid transparent;
+  border-left: 0.5rem solid transparent;
+  /* background: black; */
+}
+.tooltipInformation {
+  display: none;
+  position: absolute;
+  top: 150%;
+  right: -10%;
+  /* transform: translateX(-50%); */
+  width: 300px;
+  padding: 0.1rem;
+  font-size: 0.8rem;
+  border-radius: 0.5rem;
+  background: black;
+  color: white;
+}
+.headerTooltip:hover .tooltipInformation {
+  cursor: help;
+  display: flex;
+}
+.headerTooltip span {
+  /* background: lightgrey; */
+  vertical-align: middle;
+}
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+}
+.rowSection {
+  display: flex;
+}
+.rowSection .rankBox {
+  flex: 1;
+  margin: 0.2rem;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rankBox .rankOrder {
+  flex: 1;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.5rem;
+  color: #f5ede4;
+  text-shadow: 0.2rem 0.2rem 0.2rem #000;
+}
+.rankBox .rankKeyword {
+  flex: 4;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 0.5rem;
+  text-align: center;
+}
+.rowSection:nth-child(1) .rankBox > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 33.3%;
+}
+.rankBox:hover {
+  transform: scale(1.1);
+}
+
+.rowSection:nth-child(1) .rankBox:nth-child(1) {
+  background-color: #ecd5e3;
+}
+.rowSection:nth-child(2) .rankBox:nth-child(1) {
+  background-color: #c0d4ba;
+}
+.rowSection:nth-child(2) .rankBox:nth-child(2) {
+  background-color: #bec6eb;
+}
+.rowSection:nth-child(2) .rankBox:nth-child(3) {
+  background-color: #daece0;
+}
+.rowSection:nth-child(3) .rankBox:nth-child(1) {
+  background-color: #fbecc6;
+}
+.rowSection:nth-child(3) .rankBox:nth-child(2) {
+  background-color: #f0e9f9;
+}
+.rowSection:nth-child(3) .rankBox:nth-child(3) {
+  background-color: #ffcfcb;
+}
+.rowSection:nth-child(4) .rankBox:nth-child(1) {
+  background-color: #cddeef;
+}
+.rowSection:nth-child(4) .rankBox:nth-child(2) {
+  background-color: #feafab;
+}
+.rowSection:nth-child(4) .rankBox:nth-child(3) {
+  background-color: #ffcbaf;
+}
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+/* .rankBox + div {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  position: absolute;
+  z-index: 1;
+  color: black;
+} */
+
+/*.headContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,8 +190,10 @@
   padding: 1%;
 }
 .title {
-  font-size: 2rem;
+  font-size: 3rem;
+  font-weight: 600;
   text-align: center;
+  background-color: #98b6ec;
 }
 .subTitle {
   display: flex;
@@ -28,9 +202,29 @@
 .noticeInformation {
   display: flex;
   justify-content: end;
+  position: relative;
 }
 .noticeInformation > span {
   padding-left: 0.3rem;
+}
+.noticeInformation > span:nth-child(2) {
+  cursor: help;
+}
+
+.noticeInformation > span:nth-child(3) {
+  background-color: white;
+  position: absolute;
+  right: 0;
+  width: 50%;
+  font-size: 0.8rem;
+  visibility: hidden;
+}
+.noticeInformation > span:nth-child(2):hover + span:nth-child(3) {
+  background-color: #fcf4ec;
+  box-shadow: 1px 1px 0.5px black;
+  border: 1px solid black;
+  display: flex;
+  visibility: visible;
 }
 .contentContainer {
   display: flex;
@@ -55,7 +249,6 @@ a {
   margin-bottom: 1rem;
 }
 
-/*1st -3rd*/
 .topRank > div {
   width: 33%;
   height: 100%;
@@ -63,16 +256,16 @@ a {
 }
 .topRank > div .rankNumber {
   font-size: 3rem;
+  color: #ff9f97;
 }
 
 .topRank > div .rankKeyword {
   font-size: 2rem;
   background-color: #ffcfcb;
-  border-radius: 1rem;
 }
 .topRank > div a {
   background-color: #ffcfcb;
-  color: black;
+  color: #fcf4ec;
 }
 .rank.first > .rankNumber {
   position: relative;
@@ -103,7 +296,7 @@ a {
 .rank.first {
   position: relative;
 }
-.startImage {
+.starImage {
   position: absolute;
   background-color: transparent;
   width: 3rem;
@@ -112,9 +305,9 @@ a {
   transform: translate(-50%, -50%);
   filter: invert(60%) sepia(72%) saturate(348%) hue-rotate(185deg)
     brightness(96%) contrast(93%);
-  /*filter from css filter generator */
   z-index: 1;
 }
+
 .rankKeyword.first {
   padding: 2rem 0;
 }
@@ -125,14 +318,12 @@ a {
   padding: 0.5rem 0;
 }
 
-/* 4th - 10th */
 .restRank .rank {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
   margin: 0.2rem 0;
-  border-radius: 1rem;
   background-color: #ff9f97;
 }
 .restRank .rank .rankNumber {
@@ -150,11 +341,9 @@ a {
 }
 .restRank .rank a {
   background-color: #ff9f97;
-  color: #000;
+  color: #fcf4ec;
 }
 
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-}
-
-/*MEDIA QUERY*/
+} */

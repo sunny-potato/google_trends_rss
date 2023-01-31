@@ -6,6 +6,7 @@ export async function fetchRSS() {
   // convert RSS into JSON
   // https://rss2json.com/#rss_url=https%3A%2F%2Fwww.reddit.com%2Fr%2Fgifs.rss
   const rss_json = `https://api.rss2json.com/v1/api.json?rss_url=${rss_url}`;
+
   try {
     const response = await fetch(rss_json); // fetch return promise
     const data = await response.json();

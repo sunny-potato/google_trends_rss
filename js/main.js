@@ -1,9 +1,9 @@
 import "../css/style.css";
 import { fetchRSS } from "./fetchRSS";
 let data = await fetchRSS();
-const feedTitle = data.feed.title;
+console.log(data);
+// const feedTitle = data.feed.title;
 const dataRank = data.items; // title, pubDate, link
-// console.log(dataRank.pubDate);
 const rankList = [
   "first",
   "second",
@@ -17,12 +17,6 @@ const rankList = [
   "tenth",
 ];
 
-// for (let i = 0; i < rankList.length; i++) {
-//   document.querySelector(`.rank .${rankList[i]}`).innerHTML = dataRank[i].title;
-// document.querySelector(`.rank.${rankList[i]} .rankKeyword`).innerHTML =
-//   dataRank[i].title;
-// }
-
 for (let i = 0; i < rankList.length; i++) {
   const link = document.createElement("a");
   const linkName = document.createTextNode(`${dataRank[i].title}`);
@@ -34,8 +28,6 @@ for (let i = 0; i < rankList.length; i++) {
   link.setAttribute("target", "_blank");
   const parentDiv = document.querySelector(`.rankKeyword.${rankList[i]}`);
   parentDiv.appendChild(link);
-
-  // console.log(link);
 }
 
 // get date
@@ -44,11 +36,12 @@ let getToday = 0;
 for (let i = 0; i < dataRank.length; i++) {
   const getDate = dataRank[i].pubDate.split(" ");
   const currentDate = Number(getDate[0].slice(8, 10));
-  // console.log(getDate[0]);
+  console.log(getDate[0]);
   if (todaysDate < currentDate) {
     todaysDate = currentDate;
     getToday = getDate[0];
   }
 }
-document.querySelector(".date").innerHTML = `Date : ${getToday}`;
-// console.log(todaysDate, getToday);
+document.querySelector(
+  ".headerDate"
+).innerHTML = `The latest update : ${getToday} `;
