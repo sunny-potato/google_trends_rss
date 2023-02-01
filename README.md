@@ -25,7 +25,10 @@ RSS feed which has XML file format from Google trends(https://trends.google.com/
 ### What I have tried in the project
 
 1. RSS
-   -Get data from RSS feed using "fetch()" in Javascript
+
+- Get data from RSS feed using "fetch()" in Javascript
+
 2. Media quary
-   -Basic media quary (https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
-   -Responsive design to different screen sizes using CSS media queries
+
+- Basic media quary (https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
+- Responsive design to different screen sizes using CSS media queries
