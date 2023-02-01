@@ -1,4 +1,4 @@
-# Top 10 popular keywards searched in Norway
+# Top 10 popular keywords searched in Norway
 
 RSS feed which has XML file format from Google trends(https://trends.google.com/trends/trendingsearches/daily?geo=NO) is converted into JSON file. Using the Json file the single page of top 10 keywords is created.
 
