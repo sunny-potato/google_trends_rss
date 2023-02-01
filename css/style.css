@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 1em;
   font-family: "Space Mono", monospace;
 }
 body {
@@ -21,7 +20,6 @@ a {
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  /* background: lightgreen; */
 }
 .headerTitle::before {
   content: "Top 10";
@@ -52,13 +50,9 @@ a {
   display: inline-flex;
   width: 100%;
   justify-content: space-between;
-  /* align-items: center; */
   margin-top: 2rem;
 }
-/* .headerDate {
-} */
 .headerTooltip {
-  /* background: lightgoldenrodyellow; */
   text-align: center;
   position: relative;
 }
@@ -70,14 +64,12 @@ a {
   border-bottom: 1rem solid black;
   border-right: 0.5rem solid transparent;
   border-left: 0.5rem solid transparent;
-  /* background: black; */
 }
 .tooltipInformation {
   display: none;
   position: absolute;
   top: 150%;
   right: -10%;
-  /* transform: translateX(-50%); */
   width: 300px;
   padding: 0.1rem;
   font-size: 0.8rem;
@@ -90,12 +82,12 @@ a {
   display: flex;
 }
 .headerTooltip span {
-  /* background: lightgrey; */
   vertical-align: middle;
 }
 .mainContainer {
   display: flex;
   flex-direction: column;
+  padding: 0 1rem;
 }
 .rowSection {
   display: flex;
@@ -131,7 +123,7 @@ a {
   width: 33.3%;
 }
 .rankBox:hover {
-  transform: scale(1.1);
+  transform: scale(1.02);
 }
 
 .rowSection:nth-child(1) .rankBox:nth-child(1) {
@@ -168,182 +160,115 @@ a {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
-/* .rankBox + div {
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: transparent;
-  position: absolute;
-  z-index: 1;
-  color: black;
-} */
-
-/*.headContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 10%;
-  padding: 0.5rem 0;
-}
-.headContainer div {
-  width: 80%;
-  padding: 1%;
-}
-.title {
-  font-size: 3rem;
-  font-weight: 600;
-  text-align: center;
-  background-color: #98b6ec;
-}
-.subTitle {
-  display: flex;
+@media screen and (max-width: 1024px) {
+  .rankBox .rankOrder {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  .rankBox .rankKeyword {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
 }
 
-.noticeInformation {
-  display: flex;
-  justify-content: end;
-  position: relative;
-}
-.noticeInformation > span {
-  padding-left: 0.3rem;
-}
-.noticeInformation > span:nth-child(2) {
-  cursor: help;
+@media screen and (max-width: 750px) {
+  .headerTitle::before {
+    font-size: 1rem;
+  }
+  .headerTitle {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+  .headerTitle::after {
+    right: -5%;
+    font-size: 1rem;
+  }
+  .headerSubTitle {
+    font-size: 0.8rem;
+  }
+
+  .rankBox .rankOrder {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .rankBox .rankKeyword {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.2rem;
+  }
 }
 
-.noticeInformation > span:nth-child(3) {
-  background-color: white;
-  position: absolute;
-  right: 0;
-  width: 50%;
-  font-size: 0.8rem;
-  visibility: hidden;
-}
-.noticeInformation > span:nth-child(2):hover + span:nth-child(3) {
-  background-color: #fcf4ec;
-  box-shadow: 1px 1px 0.5px black;
-  border: 1px solid black;
-  display: flex;
-  visibility: visible;
-}
-.contentContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-a {
-  text-decoration: none;
-}
-.topRank {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  width: 80%;
-  height: 40%;
-  margin-top: 2%;
-}
-.restRank {
-  width: 80%;
-  height: 61%;
-  margin-bottom: 1rem;
+@media screen and (max-width: 550px) {
+  .headerTitle::before {
+    font-size: 1rem;
+  }
+  .headerTitle {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .headerTitle::after {
+    bottom: -10%;
+    right: -5%;
+    font-size: 1rem;
+  }
+  .headerSubTitle {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .headerDate {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .tooltipInformation::before {
+    top: -20%;
+    right: 80%;
+  }
+  .tooltipInformation {
+    top: 150%;
+    right: -150%;
+  }
+
+  .mainContainer {
+    margin-bottom: 2rem;
+  }
+  .rowSection {
+    flex-direction: column;
+    align-items: center;
+  }
+  .rowSection .rankBox {
+    width: 70%;
+    margin: 0.2rem;
+  }
+  .rankBox .rankOrder {
+    font-size: 2rem;
+  }
+  .rankBox .rankKeyword {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  .rowSection:nth-child(1) .rankBox > div {
+    width: 100%;
+  }
 }
 
-.topRank > div {
-  width: 33%;
-  height: 100%;
-  text-align: center;
+@media screen and (max-width: 410px) {
+  .headerTitle::before {
+    font-size: 1rem;
+  }
+  .headerTitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  .headerTitle::after {
+    bottom: -10%;
+    right: -5%;
+    font-size: 0.8rem;
+  }
+  .headerDate {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .rankBox .rankOrder {
+    font-size: 1.5rem;
+  }
 }
-.topRank > div .rankNumber {
-  font-size: 3rem;
-  color: #ff9f97;
-}
-
-.topRank > div .rankKeyword {
-  font-size: 2rem;
-  background-color: #ffcfcb;
-}
-.topRank > div a {
-  background-color: #ffcfcb;
-  color: #fcf4ec;
-}
-.rank.first > .rankNumber {
-  position: relative;
-}
-.rank.first > .rankNumber::before {
-  content: "";
-  border: 3px solid #98b6ec;
-  border-radius: 70% 50% 70% 70%;
-  width: 7rem;
-  height: 3rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.rank.first > .rankNumber::after {
-  content: "";
-  border: 3px solid #98b6ec;
-  border-radius: 70% 50% 70% 70%;
-  width: 6.8rem;
-  height: 2.8rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(7deg);
-}
-.rank.first {
-  position: relative;
-}
-.starImage {
-  position: absolute;
-  background-color: transparent;
-  width: 3rem;
-  top: 0;
-  left: 60%;
-  transform: translate(-50%, -50%);
-  filter: invert(60%) sepia(72%) saturate(348%) hue-rotate(185deg)
-    brightness(96%) contrast(93%);
-  z-index: 1;
-}
-
-.rankKeyword.first {
-  padding: 2rem 0;
-}
-.rankKeyword.second {
-  padding: 1.2rem 0;
-}
-.rankKeyword.third {
-  padding: 0.5rem 0;
-}
-
-.restRank .rank {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  margin: 0.2rem 0;
-  background-color: #ff9f97;
-}
-.restRank .rank .rankNumber {
-  width: 20%;
-  font-size: 2rem;
-  text-align: center;
-  margin-left: 1rem;
-  background-color: #ff9f97;
-}
-.restRank .rank .rankKeyword {
-  width: 80%;
-  margin: 0 10px;
-  font-size: 1.5rem;
-  background-color: #ff9f97;
-}
-.restRank .rank a {
-  background-color: #ff9f97;
-  color: #fcf4ec;
-}
-
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-} */

@@ -2,7 +2,6 @@ import "../css/style.css";
 import { fetchRSS } from "./fetchRSS";
 let data = await fetchRSS();
 console.log(data);
-// const feedTitle = data.feed.title;
 const dataRank = data.items; // title, pubDate, link
 const rankList = [
   "first",
