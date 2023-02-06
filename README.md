@@ -12,7 +12,7 @@ RSS feed which has XML file format from Google trends(https://trends.google.com/
 
 ## Link
 
-- Link to the project -> [Top10 search keywords](link)
+- Link to the project -> [Top10 search keywords](https://top10keywords-sunhee.netlify.app/)
 - ![](top10_keywords.gif)
 
 ## Features
@@ -32,3 +32,8 @@ RSS feed which has XML file format from Google trends(https://trends.google.com/
 
 - Basic media quary (https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 - Responsive design to different screen sizes using CSS media queries
+
+3. Flex + Grid
+
+- Change from only use of flex to combination of flex and grid
+  Since grid is a good way to have/hold same structure of containers in both x-axis and y-axis, no matter length of data in containers all the rank containers can hold same height and width, which I couldn't make it with only flex.
