@@ -48,7 +48,7 @@ npm run dev
 - Reponsive design using Media queries
 - Show the recent date that data from Google trends received
 
-### What I have tried in the project
+## What I have tried in the project
 
 1. RSS
    Get data from RSS feed using "fetch()" in Javascript
@@ -60,6 +60,6 @@ npm run dev
 3. Flex + Grid
    Change from only use of flex to combination of flex and grid : since grid is a good way to have/hold same structure of containers in both x-axis and y-axis, no matter length of data in containers all the rank containers can hold same height and width, which I couldn't make it with only flex.
 
-# Reference
+## Reference
 
 - Google trends : https://trends.google.com/trends
