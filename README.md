@@ -10,6 +10,32 @@ RSS feed which has XML file format from Google trends(https://trends.google.com/
 - Javascript : to fetch data
 - Netlify : to deploy the page
 
+## How to start
+
+- Clone the repository of project in terminal,
+
+```bash
+git clone https://github.com/sunny-potato/google_trends_rss.git
+```
+
+- Go to the clone file "google_trends_rss"
+
+```bash
+cd google_trends_rss
+```
+
+- If Vite is not installed, install Vite
+
+```bash
+npm install
+```
+
+- Run Vite in terminal,
+
+```bash
+npm run dev
+```
+
 ## Link
 
 - Link to the project -> [Top10 search keywords](https://top10keywords-sunhee.netlify.app/)
@@ -25,15 +51,15 @@ RSS feed which has XML file format from Google trends(https://trends.google.com/
 ### What I have tried in the project
 
 1. RSS
-
-- Get data from RSS feed using "fetch()" in Javascript
+   Get data from RSS feed using "fetch()" in Javascript
 
 2. Media quary
-
-- Basic media quary (https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
-- Responsive design to different screen sizes using CSS media queries
+   Basic media quary (https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
+   Responsive design to different screen sizes using CSS media queries
 
 3. Flex + Grid
+   Change from only use of flex to combination of flex and grid : since grid is a good way to have/hold same structure of containers in both x-axis and y-axis, no matter length of data in containers all the rank containers can hold same height and width, which I couldn't make it with only flex.
 
-- Change from only use of flex to combination of flex and grid
-  Since grid is a good way to have/hold same structure of containers in both x-axis and y-axis, no matter length of data in containers all the rank containers can hold same height and width, which I couldn't make it with only flex.
+# Reference
+
+- Google trends : https://trends.google.com/trends
