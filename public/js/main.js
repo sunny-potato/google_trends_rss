@@ -1,7 +1,6 @@
 import "../css/style.css";
 import { fetchRSS } from "./fetchRSS";
 let data = await fetchRSS();
-console.log(data);
 const dataRank = data.items; // title, pubDate, link
 const rankList = [
   "first",
@@ -35,7 +34,6 @@ let getToday = 0;
 for (let i = 0; i < dataRank.length; i++) {
   const getDate = dataRank[i].pubDate.split(" ");
   const currentDate = Number(getDate[0].slice(8, 10));
-  console.log(getDate[0]);
   if (todaysDate < currentDate) {
     todaysDate = currentDate;
     getToday = getDate[0];
